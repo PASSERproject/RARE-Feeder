@@ -5,7 +5,7 @@
 # Purpose: Library file to either collect data or capture video
 
 import sys
-sys.path.insert(0, '~/Feeder/sensor_libraries/DHT')
+sys.path.insert(0, '~/sensor_libraries/DHT')
 import Adafruit_DHT
 import datetime
 import time

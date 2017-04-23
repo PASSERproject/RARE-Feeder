@@ -16,4 +16,4 @@ cd ~/sensor_libraries/DHT
 sudo python ./setup.py install
 cd ../Proximity
 sudo python ./setup.py install
-cd ../../source_code
+cd ../../Feeder/source_code

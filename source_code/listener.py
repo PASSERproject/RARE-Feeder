@@ -13,7 +13,7 @@ import sys
 import collect_data
 from subprocess import call
 
-sys.path.insert(0, '~/Feeder/sensor_libraries/Proximity')
+sys.path.insert(0, '~/sensor_libraries/Proximity')
 import Adafruit_VCNL40xx
 
 
