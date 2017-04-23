@@ -10,9 +10,10 @@
 import time
 import RPi.GPIO as GPIO
 import sys
+import collect_data
 from subprocess import call
 
-sys.path.insert(0, '~/Documents/feederSoftware/sensor_libraries/Proximity_Python_Library/Adafruit_Python_VCNL40xx')
+sys.path.insert(0, '~/Feeder/sensor_libraries/Proximity')
 import Adafruit_VCNL40xx
 
 
@@ -38,44 +39,13 @@ vcnl = Adafruit_VCNL40xx.VCNL410()
 
 
 while True:
-	print('Pressure={0}  ,  Proximity={1}'.format(GPIO.input(pin), vcnl.read_proximity()))
-	if (GPIO.input(pin) or (vcnl.read_proximity() > threshold)):
+	#print('Pressure={0}  ,  Proximity={1}'.format(GPIO.input(pin), vcnl.read_proximity()))
+	if ((vcnl.read_proximity() > threshold) or GPIO.input(pin)):
 		#print('Triggered by sensor')
-		self.capture()
+		collect_data.capture();
+                collect_data.collect();
 		time.sleep(sleep_hit);
 	else:
 		#print('below threshold')
 		time.sleep(sleep_miss);
-
-def capture():
-	# Output location
-	path = "/media/pi/Feeder_Data/"
-
-	# File Name
-	output = time.strftime("%m%d%Y-%H%M%S") + ".avi"
-
-	# Frames Per Second
-	fps = 25
-
-	# Video Duration
-	time = "0:0:10"
-
-	call(["streamer", "-q", "-r", fps, "-f", "rgb24", "-t", time, "-o", path + output])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

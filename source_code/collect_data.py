@@ -2,13 +2,14 @@
 # John Filipowicz
 # Radford University
  
-# This file is to collect the current reading from the DHT11 temp/humidity
-# sensor to the designated .csv file
+# Purpose: Library file to either collect data or capture video
 
 import sys
-sys.path.insert(0, '~/Documents/feederSoftware/sensor_libraries/DHT_Python_Library/Adafruit_Python_DHT')
+sys.path.insert(0, '~/Feeder/sensor_libraries/DHT')
 import Adafruit_DHT
 import datetime
+import time
+from subprocess import call
 
 
 def collect():
@@ -24,7 +25,7 @@ def collect():
 
 	# Change the name of the file by changing the string literal "x.csv"
 	# Don't do this. The filename is hard coded right now
-	filename = "/media/pi/Feeder_Data/DHT_data.csv"
+	filename = "/media/pi/FEEDER_DATA/DHT_data.csv"
 	datum = open(filename, "a")
 
 	# Writing the sensor data to file
@@ -32,3 +33,18 @@ def collect():
 	datum.write(str(humidity) + ",")
 	datum.write(str(datetime.datetime.now()))
 	datum.close()
+
+def capture():
+    # Output location
+    path = "/media/pi/FEEDER_DATA/"
+
+    # File Name
+    output = time.strftime("%m-%d-%Y_%H-%M-%S") + ".avi"
+
+    # Frames Per Second
+    fps = 30
+
+    # Video Duration
+    time = "0:0:10"
+
+    call(["streamer", "-q", "-r", fps, "-f", "rgb24", "-t", time, "-o", path + output])

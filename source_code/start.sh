@@ -5,27 +5,14 @@
 
 # Purpose: Prep for and launch all necessary processes.
 
-CSV=/media/pi/Feeder_Data/DHT_data.csv
+CSV=/media/pi/FEEDER_DATA/DHT_data.csv
 
 if [! -f "$CSV"] then
 	echo "Temperature,Humidity,TimeStamp" >> "$CSV"
 fi
 
-./periodic.py &
-./listener.py &
+# Remove '#' and the space before it to redirect stderr & stdout to logs
+./periodic.py & #>./Logs/periodic.log
+./listener.py & #>./Logs/listener.log
 #Dr. Ray's Program too
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
