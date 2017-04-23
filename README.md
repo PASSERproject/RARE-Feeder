@@ -1,4 +1,9 @@
-# RARE-Feeder
-Software created for the Radford Amazon Research Expedition. Implementation to be at Radford's Peru research center.
+# "Passer" project
 
-*****This repository is being kept empty untill full completion of the project, estimated: 5/2017*****
+The code expects a specific setup of the sensor hardware, consult the hardware instructions for the specifics. 
+
+The software has dependancies and setup that are needed prior to being able to run, consult the software instructions for the specifics.
+
+See manual/sensor_specs for more information on the individual sensors
+See manual/troubleshooting for more information on troubleshooting
+See manual/tips for assorted tips for using the system.
