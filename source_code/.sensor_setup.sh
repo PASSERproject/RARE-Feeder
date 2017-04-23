@@ -12,7 +12,8 @@ mkdir -p ~/sensor_libraries/Proximity
 git clone http://github.com/adafruit/Adafruit_Python_DHT ~/sensor_libraries/DHT/
 git clone http://github.com/adafruit/Adafruit_Python_VCNL40xx ~/sensor_libraries/DHT/
 
-cd ~/sensor_libraries
-sudo python ./DHT/setup.py install
-sudo python ./Proximity/setup.py install
-cd ../source_code
+cd ~/sensor_libraries/DHT
+sudo python ./setup.py install
+cd ../Proximity
+sudo python ./setup.py install
+cd ../../source_code
