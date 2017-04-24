@@ -20,5 +20,5 @@ apt-get install imagemagick libav libav-tools libav-doc
 
 # Genetic Algorithm
 apt-get install libapache2-mod-php5 php5 php-pear apache2 apache2-utils
-php5-xcache php5-mysql php5-curl php5-gd
+apt-get install php5-xcache php5-mysql php5-curl php5-gd
 
