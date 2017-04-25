@@ -16,7 +16,7 @@ apt-get update
 apt-get install build-essential python-dev
 
 # Webcam
-apt-get install imagemagick libav-tools libav-doc
+apt-get install streamer imagemagick libav-tools libav-doc
 
 # Genetic Algorithm
 apt-get install libapache2-mod-php5 php5 php-pear apache2 apache2-utils
