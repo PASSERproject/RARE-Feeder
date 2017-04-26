@@ -42,7 +42,9 @@ while True:
 	#print('Pressure={0}  ,  Proximity={1}'.format(GPIO.input(pin), vcnl.read_proximity()))
 	if ((vcnl.read_proximity() > threshold) or GPIO.input(pin)):
 		#print('Triggered by sensor')
-		collect_data.capture();
+		#collect_data.capture();
+		call(["./servo2.py", "&"])
+		call("./images.sh")
                 collect_data.collect();
 		time.sleep(sleep_hit);
 	else:
