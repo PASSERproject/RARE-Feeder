@@ -35,7 +35,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(pin, GPIO.IN)
 
 # Creating Proximity sensor instance
-vcnl = Adafruit_VCNL40xx.VCNL410()
+vcnl = Adafruit_VCNL40xx.VCNL4010()
 
 
 while True:
