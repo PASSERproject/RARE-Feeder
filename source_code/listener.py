@@ -21,13 +21,13 @@ import Adafruit_VCNL40xx
 pin = 21
 
 # Threshold for Proximity sensor
-threshold = 2700
+threshold = 2300
 
 # Time to sleep between hits in seconds
-sleep_hit = 5
+#sleep_hit = 5
 
 # Time to sleep between misses in seconds
-sleep_miss = 5
+sleep_miss = .5
 
 
 # BCM means we are using GPIO numbering instead of pin numbering.
@@ -46,7 +46,7 @@ while True:
 		call(["./servo2.py", "&"])
 		call("./images.sh")
                 collect_data.collect();
-		time.sleep(sleep_hit);
+		#time.sleep(sleep_hit);
 	else:
 		#print('below threshold')
 		time.sleep(sleep_miss);
