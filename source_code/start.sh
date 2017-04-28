@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # John Filipowicz
 # Radford University
