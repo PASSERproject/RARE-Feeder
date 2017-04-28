@@ -6,7 +6,7 @@
 # Purpose: Create videos for each set of images previously taken.
 
 location=/media/pi/FEEDER_DATA
-cd location/images
+cd $location/images
 
 for d in */; do
   mogrify -resize 800x800 $location/images/$d*.jpeg
