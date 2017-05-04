@@ -24,7 +24,7 @@ pin = 21
 threshold = 2300
 
 # Time to sleep between hits in seconds
-#sleep_hit = 5
+sleep_hit = 5
 
 # Time to sleep between misses in seconds
 sleep_miss = .5
