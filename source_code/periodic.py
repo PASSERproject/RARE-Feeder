@@ -9,7 +9,7 @@ import time
 import collect_data
 
 # Time in seconds to sleep untill next collection
-interval = 600
+interval = 1800
 
 while True:
 	collect_data.collect()
