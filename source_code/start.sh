@@ -7,7 +7,7 @@
 
 CSV=/media/pi/FEEDER_DATA/DHT_data.csv
 
-if [! -f "$CSV"] then
+if [ ! -f "$CSV" ] ; then
 	echo "Temperature,Humidity,TimeStamp" >> "$CSV"
 fi
 
